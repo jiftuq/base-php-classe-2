@@ -10,3 +10,7 @@ Allez sur la version `dev` :
 
 https://wampserver.aviatechno.net/?lang=fr
 
+### Etape 1
+
+Vérification des fichiers nécessaires : [Vérifications paquetages VC++ installés](https://wampserver.aviatechno.net/files/tools/check_vcredist.exe)
+
