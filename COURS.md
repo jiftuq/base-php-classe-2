@@ -28,6 +28,12 @@ Il permet aux apprenants de comprendre le flux d'exécution séquentiel, la gest
 1. [Présentation de PHP](#1---présentation-de-php)
 2. [Historique de PHP](#2---historique-de-php)
 3. [Installation de l'environnement](#3---installation-de-lenvironnement)
+4. [Algorithmique - Rappels fondamentaux](#4---algorithmique---rappels-fondamentaux)
+5. [Les bases de PHP](#5---les-bases-de-php)
+   - [Les fichiers PHP](#51---les-fichiers-php)
+   - [Les balises PHP](#52---les-balises-php)
+   - [Les commentaires](#53---les-commentaires)
+   - [Placement des balises PHP](#54---placement-des-balises-php-dans-le-html)
 
 ## 1 - Présentation de PHP
 
@@ -113,7 +119,7 @@ Pour développer en PHP, nous avons besoin de trois composants :
 
 ### 3.2 - Installation de WAMP (Windows)
 
-Téléchargez WAMP sur [wampserver.com](https://www.wampserver.com/) et suivez les instructions.
+Téléchargez WAMP sur [wampserver.aviatechno.net](https://wampserver.aviatechno.net/) et suivez les instructions.
 
 📖 Tutoriel d'installation : [README.md#installation-de-wamp-sous-windows](README.md#installation-de-wamp-sous-windows)
 
@@ -135,6 +141,196 @@ phpinfo();
 Ouvrez cette page dans votre navigateur en passant par un `hôte virtuel` (WAMP) ou `www`, `htdocs`, etc . Vous devriez voir une page détaillant la configuration PHP.
 
 > ⚠️ **Supprimez ce fichier en production** : il révèle des informations sensibles sur votre serveur.
+
+---
+
+[Retour à la table des matières](#table-des-matières)
+
+---
+
+## 4 - Algorithmique - Rappels fondamentaux
+
+Avant de coder en PHP, il est **fondamental** de comprendre les bases de l'algorithmique. La programmation n'est que la **traduction d'un algorithme** dans un langage donné.
+
+### 4.1 - Qu'est-ce qu'un algorithme ?
+
+Un algorithme est une suite d'instructions **finies**, **ordonnées** et **non ambiguës**, permettant de résoudre un problème ou d'accomplir une tâche.
+
+**Exemple quotidien** : une recette de cuisine est un algorithme.
+
+### 4.2 - Les briques fondamentales
+
+Tout programme informatique repose sur **trois structures** de base :
+
+1. **Les séquences** : instructions exécutées l'une après l'autre
+2. **Les conditions** (structures de sélection) : choix entre plusieurs chemins
+3. **Les boucles** (structures de répétition) : répétition d'instructions
+
+### 4.3 - Les variables en algorithmique
+
+Une variable est un **conteneur nommé** qui stocke une valeur en mémoire.
+
+```
+ALGORITHME calculSomme
+VARIABLES
+    a : ENTIER
+    b : ENTIER
+    somme : ENTIER
+DÉBUT
+    a ← 5
+    b ← 3
+    somme ← a + b
+    AFFICHER somme
+FIN
+```
+
+### 4.4 - Les conditions en algorithmique
+
+```
+SI condition ALORS
+    instruction(s)
+SINON SI autre_condition ALORS
+    instruction(s)
+SINON
+    instruction(s)
+FIN SI
+```
+
+### 4.5 - Les boucles en algorithmique
+
+**Boucle POUR** (nombre d'itérations connu) :
+```
+POUR i DE 0 À 10
+    AFFICHER i
+FIN POUR
+```
+
+**Boucle TANT QUE** (nombre d'itérations inconnu) :
+```
+TANT QUE condition
+    instruction(s)
+FIN TANT QUE
+```
+
+### 4.6 - Les fonctions en algorithmique
+
+```
+FONCTION addition(a : ENTIER, b : ENTIER) : ENTIER
+    RETOURNER a + b
+FIN FONCTION
+```
+
+📖 **Ressources algorithmique** :
+- [Cours d'algorithmique - France IOI](http://www.france-ioi.org/)
+- [Algorithmique pour l'apprenti programmeur - OpenClassrooms](https://openclassrooms.com/fr/courses/7527306-decouvrez-le-fonctionnement-des-algorithmes)
+- [Exercices d'algorithmique - Prologin](https://prologin.org/)
+
+> 💡 **Conseil** : Avant d'écrire du code PHP, écrivez d'abord votre algorithme en pseudo-code !
+
+---
+
+[Retour à la table des matières](#table-des-matières)
+
+---
+
+## 5 - Les bases de PHP
+
+### 5.1 - Les fichiers PHP
+
+Les fichiers PHP sont des fichiers texte enregistrés avec l'extension `.php`. Le code PHP est exécuté **sur le serveur**, et le résultat est renvoyé au navigateur sous forme de code HTML (ou autre).
+
+### 5.2 - Les balises PHP
+
+Le code PHP est écrit entre les balises `<?php` et `?>`.
+
+```php
+<?php
+echo "Hello World";
+?>
+```
+
+Il existe une **balise courte** `<?= ?>` équivalente à `<?php echo ?>` :
+
+```php
+<?= "Hello World" ?>
+```
+
+**Règles importantes :**
+
+- Le `;` termine chaque instruction (première cause d'erreur pour les débutants !)
+- Le `;` est **facultatif** juste avant `?>`
+- Si le fichier ne contient **que du PHP**, on **ne ferme pas** la balise `?>` (bonne pratique)
+
+```php
+<?php
+echo "Hello World";
+echo "<br>Hello friends";
+// Pas de ?> en fin de fichier = bonne pratique
+```
+
+📖 [Documentation : Balises PHP](https://www.php.net/manual/fr/language.basic-syntax.phptags.php)
+
+#### ✏️ Exercice 01
+> Créez un fichier `01-hello-world.php` qui affiche **"Hello World"** dans le navigateur.
+
+#### ✏️ Exercice 02
+> Créez un fichier `02-hello-world-short.php` qui affiche **"Hello World"** en utilisant la balise courte `<?= ?>`.
+
+#### ✏️ Exercice 03
+> Créez un fichier `03-hello-friends.php` qui affiche **"Hello World"** suivi de **"Hello friends"** sur la ligne suivante.
+
+---
+
+### 5.3 - Les commentaires
+
+Les commentaires sont des lignes **non exécutées** par le serveur. Ils servent à documenter et rendre le code lisible.
+
+```php
+<?php
+// Commentaire sur une ligne
+
+# Commentaire sur une ligne (style shell)
+
+/*
+Commentaire
+sur plusieurs lignes
+*/
+```
+
+📖 [Documentation : Commentaires](https://www.php.net/manual/fr/language.basic-syntax.comments.php)
+
+#### ✏️ Exercice 04
+> Créez un fichier `04-commentaires.php` qui **n'affiche rien** dans le navigateur, mais contient les trois types de commentaires.
+
+---
+
+### 5.4 - Placement des balises PHP dans le HTML
+
+Les balises PHP peuvent être placées **n'importe où** dans un document HTML :
+
+```php
+<?php
+  // Code PHP en début de fichier
+  $date = date("Y-m-d H:i:s");
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Ma page - <?= date("H:i") ?></title>
+</head>
+<body>
+  <h1>Date : <?= $date ?></h1>
+  <p>Il est <?= date("H:i:s") ?></p>
+</body>
+</html>
+```
+
+Nous avons utilisé la fonction native `date()` et stocké le résultat dans une **variable** `$date`.
+
+📖 [Documentation : date()](https://www.php.net/manual/fr/function.date.php) | [Formats de date](https://www.php.net/manual/fr/datetime.format.php)
+
+#### ✏️ Exercice 05
+> Créez un fichier `05-php-placement.php` qui affiche la date et l'heure du serveur dans une page HTML complète.
 
 ---
 
