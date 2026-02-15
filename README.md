@@ -1,5 +1,11 @@
 # base-php-classe-2
 
+## Base de données MySQL, Apache et PHP 8.0 à 8.5
+
+### Aller au cours
+
+- [Cours](COURS.md)
+
 ## Installation de WAMP sous Windows
 
 N'allez pas sur le site grand public:
