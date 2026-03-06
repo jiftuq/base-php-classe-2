@@ -62,6 +62,7 @@ $stagiaires = [
     echo "</pre>";
 
     var_dump($stagiaires,$array);
+
     ?>
 </body>
 </html>
